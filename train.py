@@ -78,7 +78,7 @@ criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 scheduler = CosineAnnealingLR(optimizer, T_max=10, eta_min=0)
 
-# 训练循环
+# train loop
 num_epochs = 20
 train_losses = []
 train_accuracies = []
@@ -176,5 +176,5 @@ plt.legend()
 plt.tight_layout()
 plt.show()
 
-# 保存模型
+# save the model
 torch.save(model.state_dict(), "glomeruli_model.pth")
