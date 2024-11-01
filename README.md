@@ -68,6 +68,9 @@ The split is performed with `random_state=42` to ensure reproducibility. The cod
 ## Acknowledgments
 This project is inspired by various public repositories and publications in the field of medical image classification.
 
+## Results
+Due to time constraints, only the evaluation results and visualization images for 10 training rounds are provided here.
+
 Epoch 1/10, Train Loss: 0.1629, Train Accuracy: 0.9427, Val Loss: 0.1388, Val Accuracy: 0.9410, Precision: 1.0000, Recall: 0.6583, F1 Score: 0.7939
 
 Epoch 2/10, Train Loss: 0.0873, Train Accuracy: 0.9677, Val Loss: 0.0557, Val Accuracy: 0.9757, Precision: 0.9524, Recall: 0.9045, F1 Score: 0.9278
