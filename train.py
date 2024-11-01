@@ -7,7 +7,6 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.optim.lr_scheduler import CosineAnnealingLR
 from torchvision.models import resnet18
-from sklearn.metrics import classification_report, accuracy_score
 from PIL import Image
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
@@ -23,19 +22,19 @@ class GlomeruliDataset(Dataset):
         return len(self.annotations)
 
     def __getitem__(self, index):
-        # 获取文件名和标签
+
         img_name = self.annotations.iloc[index, 0]
         label = int(self.annotations.iloc[index, 1])
 
-        # 根据标签选择不同的文件夹路径
+
         if label == 1:  # globally sclerotic
             img_path = os.path.join(self.root_dir, 'globally_sclerotic_glomeruli', img_name)
         else:  # non-globally sclerotic
             img_path = os.path.join(self.root_dir, 'non_globally_sclerotic_glomeruli', img_name)
 
-        # 加载图片并转换为 RGB
-        image = Image.open(img_path).convert("RGB")  # 转换为 RGB 格式
-        image = image.resize((224, 224))  # 将图像调整为 224x224
+
+        image = Image.open(img_path).convert("RGB")
+        image = image.resize((224, 224))
 
         if self.transform:
             image = self.transform(image)
